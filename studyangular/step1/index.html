@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MemosController">
+      <h1>memogular.js</h1>
+
+      <div class="row">
+        <div class="span12">
+          <form class="well form-inline">
+            <input type="text" class="input-xlarge" placeholder="新しいメモ" ng-model="newmemo.memo" />
+            <input type="text" class="input-small" placeholder="日付" ng-model="newmemo.date" />
+            <input type="text" class="input-xlarge" placeholder="タグ(,で区切る)" ng-model="newmemo.tags" />
+            <button type="button" class="btn btn-primary" ng-click="addNew()">追加</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span3">
+          <input type="text" class="input-middle search-query" placeholder="検索" />
+          <hr />
+          <ul>
+            <li ng-repeat="tag in condition.tags"><label class="checkbox"><input type="checkbox" ng-model="tag.selected" ng-click="changeCondition()" />{{tag.tag}}</label></li>
+          </ul>
+        </div>
+
+        <div class="span9">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>日付</th>
+                <th>メモ</th>
+                <th>タグ</th>
+                <th style="text-align: center;"><button type="button" class="btn btn-danger">削除</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="memo in memos_display">
+                <td>{{memo.date}}</td>
+                <td>{{memo.memo}}</td>
+                <td>{{memo.tags}}</td>
+                <td style="text-align: center;"><input type="checkbox" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

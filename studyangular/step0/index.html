@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>memogular.js</h1>
+
+      <div class="row">
+        <div class="span12">
+          <form class="well form-inline">
+            <input type="text" class="input-xlarge" placeholder="新しいメモ" />
+            <input type="text" class="input-small" placeholder="日付" value="2013/7/25"/>
+            <input type="text" class="input-xlarge" placeholder="タグ(,で区切る)" />
+            <button type="button" class="btn btn-primary">追加</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span3">
+          <input type="text" class="input-middle search-query" placeholder="検索" />
+          <hr />
+          <ul>
+            <li><label class="checkbox"><input type="checkbox" />タスク</label></li>
+            <li><label class="checkbox"><input type="checkbox" />お仕事</label></li>
+            <li><label class="checkbox"><input type="checkbox" />Fishing</label></li>
+            <li><label class="checkbox"><input type="checkbox" />おうち</label></li>
+            <li><label class="checkbox"><input type="checkbox" />ひらめき</label></li>
+            <li><label class="checkbox"><input type="checkbox" />予定</label></li>
+          </ul>
+        </div>
+
+        <div class="span9">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>日付</th>
+                <th>メモ</th>
+                <th>タグ</th>
+                <th style="text-align: center;"><button type="button" class="btn btn-danger">削除</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2013/7/25</td>
+                <td>あれをやらないとやばい</td>
+                <td>タスク, お仕事</td>
+                <td style="text-align: center;"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td>2013/7/23</td>
+                <td>チヌが釣れた!!</td>
+                <td>Fishing</td>
+                <td style="text-align: center;"><input type="checkbox" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
